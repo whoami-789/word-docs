@@ -13,5 +13,5 @@ import java.util.List;
 import java.util.Optional;
 
 public interface KreditRepository extends JpaRepository<Kredit, String> {
-
+    Optional<Kredit> findByNumdog(String kod);
 }

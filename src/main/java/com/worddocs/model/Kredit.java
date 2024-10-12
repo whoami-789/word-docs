@@ -89,9 +89,9 @@ public class Kredit {
     @Column(name = "tel")
     private Byte tel;
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "kod_dog", updatable = false, nullable = false)
-    private Integer kodDog;
+    private Integer kodDog;  // Уберите @GeneratedValue отсюда
+
 
     @Transient
     private Boolean indpred;
@@ -228,18 +228,6 @@ public class Kredit {
     @Column(name = "xatar")
     private Byte xatar;
 
-    @Column(name = "lspeni")
-    private String lspeni;
-
-    @Column(name = "grki-claim-id")
-    private String grkiClaimId;
-
-    @Column(name = "grki-agreement-id")
-    private String grkiAgreementId;
-
-    @Column(name = "grki-contract-id")
-    private String grkiContractId;
-
     @OneToMany(mappedBy = "kredit")
     private List<Grafik> grafiks;
 
@@ -252,8 +240,5 @@ public class Kredit {
     @ManyToOne
     @JoinColumn(name = "kod", referencedColumnName = "kodchlen", insertable = false, updatable = false)
     private AzolikFiz azolikFiz;
-
-    
-
 }
 

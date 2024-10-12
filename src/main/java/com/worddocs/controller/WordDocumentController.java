@@ -29,7 +29,7 @@ public class WordDocumentController {
 
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
-            headers.setContentDispositionFormData("attachment", "ogoxlantirish_document.docx");
+            headers.setContentDispositionFormData("attachment", "ogoxlantirish_document.doc");
 
             return new ResponseEntity<>(document, headers, HttpStatus.OK);
         } catch (IOException e) {
@@ -37,19 +37,19 @@ public class WordDocumentController {
         }
     }
 
-    @GetMapping("/generate-grafik")
-    public ResponseEntity<byte[]> generateGrafik(@RequestParam String kreditKod) {
-        try {
-            byte[] document = wordDocumentService.generateGrafik(kreditKod);
-
-            HttpHeaders headers = new HttpHeaders();
-            headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
-            headers.setContentDispositionFormData("attachment", "grafik_document.docx");
-
-            return new ResponseEntity<>(document, headers, HttpStatus.OK);
-        } catch (IOException e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
+//    @GetMapping("/generate-grafik")
+//    public ResponseEntity<byte[]> generateGrafik(@RequestParam String kreditKod) {
+//        try {
+//            byte[] document = wordDocumentService.generateGrafik(kreditKod);
+//
+//            HttpHeaders headers = new HttpHeaders();
+//            headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+//            headers.setContentDispositionFormData("attachment", "grafik_document.docx");
+//
+//            return new ResponseEntity<>(document, headers, HttpStatus.OK);
+//        } catch (IOException e) {
+//            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+//        }
+//    }
 }
 
