@@ -1,9 +1,7 @@
 package com.worddocs.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.DynamicUpdate;
 
 import java.math.BigDecimal;
@@ -13,10 +11,11 @@ import java.util.List;
 
 @Entity
 @Table(name = "kredit")
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @DynamicUpdate
+@Getter
+@Setter
 public class Kredit {
 
     @Id
